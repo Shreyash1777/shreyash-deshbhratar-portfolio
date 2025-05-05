@@ -11,7 +11,6 @@ import Typed from "typed.js"
 import { ParticleBackground } from "@/components/particle-background"
 import { GlowingBorderButton } from "../components/glowing-border-button"
 
-
 export default function Home() {
   const [activeSection, setActiveSection] = useState("home")
   const [showAllProjects, setShowAllProjects] = useState(false)
@@ -69,64 +68,64 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-// Project data
-const projects = [
-  {
-    title: "Fluera Livre",
-    description: "Flower classification using CNN.",
-    image: "/Fluer-Livre.jpg?height=300&width=400",
-    tech: ["Python", "CNN", "TensorFlow"],
-    demo: "https://drive.google.com/drive/folders/1Li8in7RvpzqduPJFpGw0BLQ8fcIWwUsA?usp=sharing",
-    github: "#",
-  },
-  {
-    title: "Django Soft Delete Library",
-    description: "Custom Django library for soft delete functionality",
-    image: "/django.svg",
-    tech: ["Python", "Django", "MySQL"],
-    demo: "https://drive.google.com/drive/folders/1_ZcmT73mabLG-PgLLpms5E-oys90iTG9?usp=sharing",
-    github: "#",
-  },
-  {
-    title: "Scholarship Application Tracker",
-    description: "Web application for tracking scholarship applications",
-    image: "/sat.png?height=300&width=400",
-    tech: ["Python", "Django", "MySQL", "Postman"],
-    demo: "https://drive.google.com/drive/folders/1x7qyLWlnfiBvltnP9yjP3ltRYx_Bi9yn?usp=sharing",
-    github: "#",
-  },
-  {
-    title: "Industrial Document Generator",
-    description: "Automated document generation for industrial use cases",
-    image: "/doc-gen.png?height=300&width=400",
-    tech: ["Python", "Django", "MySQL", "Postman", "React"],
-    demo: "https://drive.google.com/drive/folders/18sggOKF4fOcrz3_Wa2o5XnmrXOTFgV0J?usp=sharing",
-    github: "#",
-  },
-  {
-    title: "Django Models Sanity Check Test Script",
-    description: "Automated testing script for Django models",
-    image: "/django.svg?height=300&width=400",
-    tech: ["Python", "Django", "Unittest", "MySQL"],
-    demo: "https://drive.google.com/drive/folders/1IwtmlkNldhxb7xIUon59B-Z7gRvl5Pwn?usp=sharing",
-    github: "#",
-  },
-  {
-    title: "ATM Simulator",
-    description: "Java-based ATM simulation application",
-    image: "/atm-simu.jpg?height=300&width=400",
-    tech: ["Java", "JWT", "MySQL", "JDBC"],
-    demo: "https://drive.google.com/drive/folders/1ZJ6xql28UgUZ4TbxS_vpz5Fm91PW4nBA?usp=sharing",
-    github: "#",
-  },
-];
+  // Project data
+  const projects = [
+    {
+      title: "Fluera Livre",
+      description: "Flower classification using CNN.",
+      image: "/Fluer-Livre.jpg?height=300&width=400",
+      tech: ["Python", "CNN", "TensorFlow"],
+      demo: "https://drive.google.com/drive/folders/1Li8in7RvpzqduPJFpGw0BLQ8fcIWwUsA?usp=sharing",
+      github: "#",
+    },
+    {
+      title: "Django Soft Delete Library",
+      description: "Custom Django library for soft delete functionality",
+      image: "/django.svg",
+      tech: ["Python", "Django", "MySQL"],
+      demo: "https://drive.google.com/drive/folders/1_ZcmT73mabLG-PgLLpms5E-oys90iTG9?usp=sharing",
+      github: "#",
+    },
+    {
+      title: "Scholarship Application Tracker",
+      description: "Web application for tracking scholarship applications",
+      image: "/sat.png?height=300&width=400",
+      tech: ["Python", "Django", "MySQL", "Postman"],
+      demo: "https://drive.google.com/drive/folders/1x7qyLWlnfiBvltnP9yjP3ltRYx_Bi9yn?usp=sharing",
+      github: "#",
+    },
+    {
+      title: "Industrial Document Generator",
+      description: "Automated document generation for industrial use cases",
+      image: "/doc-gen.png?height=300&width=400",
+      tech: ["Python", "Django", "MySQL", "Postman", "React"],
+      demo: "https://drive.google.com/drive/folders/18sggOKF4fOcrz3_Wa2o5XnmrXOTFgV0J?usp=sharing",
+      github: "#",
+    },
+    {
+      title: "Django Models Sanity Check Test Script",
+      description: "Automated testing script for Django models",
+      image: "/django.svg?height=300&width=400",
+      tech: ["Python", "Django", "Unittest", "MySQL"],
+      demo: "https://drive.google.com/drive/folders/1IwtmlkNldhxb7xIUon59B-Z7gRvl5Pwn?usp=sharing",
+      github: "#",
+    },
+    {
+      title: "ATM Simulator",
+      description: "Java-based ATM simulation application",
+      image: "/atm-simu.jpg?height=300&width=400",
+      tech: ["Java", "JWT", "MySQL", "JDBC"],
+      demo: "https://drive.google.com/drive/folders/1ZJ6xql28UgUZ4TbxS_vpz5Fm91PW4nBA?usp=sharing",
+      github: "#",
+    },
+  ]
 
   // Display limited projects or all based on state
   const displayedProjects = showAllProjects ? projects : projects.slice(0, 3)
 
   const scrollToNextSection = (ref: React.RefObject<HTMLDivElement | null>) => {
-      ref.current?.scrollIntoView({ behavior: "smooth" })
-    }
+    ref.current?.scrollIntoView({ behavior: "smooth" })
+  }
 
   return (
     <main className="min-h-screen bg-black text-white overflow-hidden">
@@ -153,70 +152,72 @@ const projects = [
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mx-auto z-10"
+          className="max-w-3xl mx-auto z-10 px-4 w-full"
         >
-           {/* Header */}
-           <h1 className="text-3xl text-gray-400 font-light mb-4">Hi I'm</h1>
+          {/* Header */}
+          <h1 className="text-xl sm:text-2xl md:text-3xl text-gray-400 font-light mb-4 text-center">Hi I'm</h1>
 
-            {/* Name with stylized font */}
-            <div className="relative h-32 w-full mb-2">
-              <motion.div
-                initial={{ opacity: 0, scale: 0.9 }}
-                animate={{ opacity: 1, scale: 1 }}
-                transition={{ duration: 1, delay: 0.2 }}
-                className="w-full h-full flex items-center justify-center"
-              >
-                <h1 className="text-white text-8xl leading-tight whitespace-nowrap">Shreyash Deshbhratar</h1>
-              </motion.div>
-            </div>
-
-            {/* Typed.js element */}
+          {/* Name with stylized font */}
+          <div className="relative w-full mb-2">
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
-              className="text-[#38bdf8] text-xl mb-8 h-8"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="w-full flex items-center justify-center"
             >
-              <span ref={typedElementRef}></span>
+              <h1 className="text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-tight text-center">
+                Shreyash Deshbhratar
+              </h1>
             </motion.div>
+          </div>
 
-            {/* Resume Button */}
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
-              <GlowingBorderButton
-                href="https://drive.google.com/drive/folders/1Q_M5BfiuLGtVPqJhxKLbFh5l6aAk78th?usp=sharing"
-                className="inline-block bg-[#38bdf8] text-[#0f172a] px-8 py-2 rounded-full text-sm font-medium mb-8"
-              >
-                Resume
-              </GlowingBorderButton>
-            </motion.div>
+          {/* Typed.js element */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            className="text-[#38bdf8] text-xl mb-8 h-8"
+          >
+            <span ref={typedElementRef}></span>
+          </motion.div>
 
-            {/* Social Icons */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.8 }}
-              className="flex justify-center gap-6 mb-24"
+          {/* Resume Button */}
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.8, delay: 0.6 }}>
+            <GlowingBorderButton
+              href="https://drive.google.com/drive/folders/1Q_M5BfiuLGtVPqJhxKLbFh5l6aAk78th?usp=sharing"
+              className="inline-block bg-[#38bdf8] text-[#0f172a] px-8 py-2 rounded-full text-sm font-medium mb-8"
             >
-              <GlowingBorderButton
-                href="#"
-                className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
-              >
-                <Github className="w-5 h-5 text-[#38bdf8]" />
-              </GlowingBorderButton>
-              <GlowingBorderButton
-                href="mailto:shreyashdeshbhratar@gmail.com"
-                className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
-              >
-                <Mail className="w-5 h-5 text-[#38bdf8]" />
-              </GlowingBorderButton>
-              <GlowingBorderButton
-                href="https://www.linkedin.com/in/shreyash-deshbhratar-baa514303/"
-                className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
-              >
-                <Linkedin className="w-5 h-5 text-[#38bdf8]" />
-              </GlowingBorderButton>
-            </motion.div>
-            </motion.div>
+              Resume
+            </GlowingBorderButton>
+          </motion.div>
+
+          {/* Social Icons */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.8 }}
+            className="flex justify-center gap-6 mb-24"
+          >
+            <GlowingBorderButton
+              href="#"
+              className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
+            >
+              <Github className="w-5 h-5 text-[#38bdf8]" />
+            </GlowingBorderButton>
+            <GlowingBorderButton
+              href="mailto:shreyashdeshbhratar@gmail.com"
+              className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
+            >
+              <Mail className="w-5 h-5 text-[#38bdf8]" />
+            </GlowingBorderButton>
+            <GlowingBorderButton
+              href="https://www.linkedin.com/in/shreyash-deshbhratar-baa514303/"
+              className="bg-[#1e293b] p-3 rounded-full hover:bg-[#38bdf8]/20 transition-all duration-300 border border-[#38bdf8]/30"
+            >
+              <Linkedin className="w-5 h-5 text-[#38bdf8]" />
+            </GlowingBorderButton>
+          </motion.div>
+        </motion.div>
         {/* Next Section Preview */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -251,15 +252,15 @@ const projects = [
               viewport={{ once: false }}
               transition={{ duration: 0.6 }}
             >
-            <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden border-2 border-[#38bdf8]/20">
-              <Image
-                src="/Resume-img.jpg"
-                alt="Shreyash Deshbhratar"
-                fill
-                className="object-cover"
-                style={{ filter: 'none', mixBlendMode: 'normal' }}
-              />
-            </div>
+              <div className="relative w-full h-80 md:h-96 rounded-lg overflow-hidden border-2 border-[#38bdf8]/20">
+                <Image
+                  src="/Resume-img.jpg"
+                  alt="Shreyash Deshbhratar"
+                  fill
+                  className="object-cover"
+                  style={{ filter: "none", mixBlendMode: "normal" }}
+                />
+              </div>
             </motion.div>
 
             <motion.div
@@ -269,16 +270,23 @@ const projects = [
               transition={{ duration: 0.6, delay: 0.2 }}
               className="space-y-4"
             >
-         <p className="text-gray-300 leading-relaxed">
-              I'm Shreyash Deshbhratar, a final-year MCA student at RCOEM, Nagpur, and a passionate software developer with experience in web development, API testing, and backend engineering. I enjoy creating efficient, scalable applications and thrive in collaborative environments that encourage innovation.
-            </p>
-            <p className="text-gray-300 leading-relaxed">
-              My strengths lie in full-stack development using Python, Django, Java, and MySQL, with hands-on experience in unit testing, technical documentation, and Agile methodologies. I’ve developed and optimized real-world projects like a Scholarship Tracker Application, and even built a custom Django soft delete library. I constantly explore new technologies.
-            </p>
+              <p className="text-gray-300 leading-relaxed">
+                I'm Shreyash Deshbhratar, a final-year MCA student at RCOEM, Nagpur, and a passionate software developer
+                with experience in web development, API testing, and backend engineering. I enjoy creating efficient,
+                scalable applications and thrive in collaborative environments that encourage innovation.
+              </p>
+              <p className="text-gray-300 leading-relaxed">
+                My strengths lie in full-stack development using Python, Django, Java, and MySQL, with hands-on
+                experience in unit testing, technical documentation, and Agile methodologies. I’ve developed and
+                optimized real-world projects like a Scholarship Tracker Application, and even built a custom Django
+                soft delete library. I constantly explore new technologies.
+              </p>
 
-            <p className="text-gray-300 leading-relaxed">
-              I'm currently seeking opportunities to apply my technical and problem-solving skills to impactful projects. I’m driven by curiosity, a strong desire to improve systems, and a commitment to continuous learning. Let’s connect and build solutions that make a difference.
-            </p>
+              <p className="text-gray-300 leading-relaxed">
+                I'm currently seeking opportunities to apply my technical and problem-solving skills to impactful
+                projects. I’m driven by curiosity, a strong desire to improve systems, and a commitment to continuous
+                learning. Let’s connect and build solutions that make a difference.
+              </p>
 
               <div className="pt-4">
                 <Link
@@ -555,7 +563,6 @@ const projects = [
                   gpa: "72%",
                   description: "Focused on Computer Science and SQL.",
                 },
-                
               ].map((edu, index) => (
                 <div key={index} className="relative">
                   {/* Timeline dot */}
@@ -639,19 +646,19 @@ const projects = [
                 </div>
 
                 <div className="flex items-center gap-4">
-                <a
-                  href="https://shorturl.at/LbRQs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="bg-[#1e293b] p-3 rounded-full border border-[#38bdf8]/20"
-                >
-                  <Linkedin className="w-5 h-5 text-[#38bdf8]" />
-                </a>
-                <div>
-                  <h4 className="text-sm font-medium text-gray-400">LinkedIn</h4>
-                  <p className="text-gray-300 break-all">linkedin.com/in/shreyash-deshbhratar-baa514303</p>
+                  <a
+                    href="https://shorturl.at/LbRQs"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bg-[#1e293b] p-3 rounded-full border border-[#38bdf8]/20"
+                  >
+                    <Linkedin className="w-5 h-5 text-[#38bdf8]" />
+                  </a>
+                  <div>
+                    <h4 className="text-sm font-medium text-gray-400">LinkedIn</h4>
+                    <p className="text-gray-300 break-all">linkedin.com/in/shreyash-deshbhratar-baa514303</p>
+                  </div>
                 </div>
-              </div>
 
                 <div className="flex items-center gap-4">
                   <div className="bg-[#1e293b] p-3 rounded-full border border-[#38bdf8]/20">
